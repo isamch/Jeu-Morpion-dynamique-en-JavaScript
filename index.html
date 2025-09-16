@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic-Tac-Toe — واجهة ثابتة</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <main class="card" aria-label="Tic Tac Toe main">
+      <header class="app-head">
+        <div>
+          <h1>تيك-تاك-تو — واجهة ثابتة</h1>
+          <div class="sub">عرض واجهة اللعبة (HTML + CSS فقط)</div>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center">
+          <!-- Reset: reloads page to initial static state -->
+          <a href="#" class="btn" title="Reset">إعادة التعيين</a>
+          <button class="btn secondary" title="إرشادات">كيف تستخدم</button>
+        </div>
+      </header>
+
+      <!-- players -->
+      <section class="players" aria-label="scoreboard">
+        <div class="player" role="region" aria-label="Player 1">
+          <div class="avatar">X1</div>
+          <div class="meta">
+            <div class="name">اللاعب 1</div>
+            <div class="role">رمز: X</div>
+          </div>
+          <div class="score" aria-live="polite">02</div>
+        </div>
+
+        <div class="player" role="region" aria-label="Player 2">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--accent-2),#0891b2)">O2</div>
+          <div class="meta">
+            <div class="name">اللاعب 2</div>
+            <div class="role">رمز: O</div>
+          </div>
+          <div class="score">01</div>
+        </div>
+      </section>
+
+      <!-- board + small info -->
+      <section class="board-wrap">
+        <div class="board" role="grid" aria-label="Tic tac toe board" style="--grid-size:3">
+
+          <div class="cell mark-x" data-mark="X" role="gridcell" aria-label="cell 1" tabindex="0"></div>
+          <div class="cell mark-o" data-mark="O" role="gridcell" aria-label="cell 2" tabindex="0"></div>
+          <div class="cell" role="gridcell" aria-label="cell 3" tabindex="0"></div>
+
+
+          <div class="cell" role="gridcell" aria-label="cell 4" tabindex="0"></div>
+          <div class="cell mark-x" data-mark="X" role="gridcell" aria-label="cell 5" tabindex="0"></div>
+          <div class="cell mark-o" data-mark="O" role="gridcell" aria-label="cell 6" tabindex="0"></div>
+
+
+          <div class="cell" role="gridcell" aria-label="cell 7" tabindex="0"></div>
+          <div class="cell" role="gridcell" aria-label="cell 8" tabindex="0"></div>
+          <div class="cell" role="gridcell" aria-label="cell 9" tabindex="0"></div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- side column -->
+    <aside class="side">
+
+      <div class="panel" style="text-align:center">
+        <div style="font-weight:700;font-size:16px">ملخص النقاط</div>
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+          <div style="text-align:center">
+            <div style="font-size:22px;font-weight:800">02</div>
+            <div style="color:var(--muted);font-size:12px">اللاعب 1</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:22px;font-weight:800">01</div>
+            <div style="color:var(--muted);font-size:12px">اللاعب 2</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="panel">
+        <h3 style="margin:0 0 12px 0">التاريخ — History</h3>
+        <ul class="history-list" aria-label="history of recent games">
+          <li class="history-item">
+            <div>Game #12 — لاعب 1 فاز</div>
+            <div class="result win">X</div>
+          </li>
+          <li class="history-item">
+            <div>Game #11 — تعادل</div>
+            <div class="result draw">Draw</div>
+          </li>
+          <li class="history-item">
+            <div>Game #10 — لاعب 2 فاز</div>
+            <div class="result loss">O</div>
+          </li>
+          <li class="history-item">
+            <div>Game #09 — لاعب 1 فاز</div>
+            <div class="result win">X</div>
+          </li>
+          <li class="history-item">
+            <div>Game #08 — لاعب 2 فاز</div>
+            <div class="result loss">O</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin:0 0 8px 0">الإعدادات (ثابت)</h3>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between">
+            <div style="color:var(--muted);font-size:13px">حجم الشبكة</div>
+            <div style="font-weight:700">3x3</div>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <div style="color:var(--muted);font-size:13px">اللغة</div>
+            <div style="font-weight:700">عربي</div>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <div style="color:var(--muted);font-size:13px">حفظ التاريخ</div>
+            <div style="font-weight:700">محلي</div>
+          </div>
+        </div>
+      </div>
+
+
+    </aside>
+  </div>
+</body>
+
+</html>
