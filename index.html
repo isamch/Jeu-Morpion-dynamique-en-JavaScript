@@ -10,32 +10,36 @@
   <div class="container">
     <h1>Tic Tac Toe</h1>
 
-    <div class="scoreboard">
-      <div>Player 1: 0</div>
-      <div>Player 2: 0</div>
-    </div>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="history">
+          <h3>History</h3>
+          <ul id="history-list"></ul>
+        </div>
+      </aside>
 
-    <div class="board">
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-    </div>
+      <main class="content">
+        <div class="controls">
+          <label for="board-size">Board size:</label>
+          <input id="board-size" type="number" min="3" max="10" value="3">
+          <button id="apply-size">Apply Size</button>
+          <button id="new-game">New Game</button>
+          <button id="reset">Reset Scores</button>
+        </div>
 
-    <button class="reset">Reset Game</button>
+        <div class="scoreboard">
+          <div>Player X: <span id="score-x">0</span></div>
+          <div>Player O: <span id="score-o">0</span></div>
+          <div>Draws: <span id="score-draw">0</span></div>
+        </div>
 
-    <div class="history">
-      <h3>History</h3>
-      <ul>
-        <li>Player 1: X</li>
-        <li>Player 2: O</li>
-      </ul>
+        <div id="status" class="status">Player X's turn</div>
+
+        <div id="board" class="board" aria-label="Tic Tac Toe board" role="grid"></div>
+      </main>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

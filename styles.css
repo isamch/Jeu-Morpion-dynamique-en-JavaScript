@@ -7,29 +7,75 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #f0f0f0;
+  margin: 0;
+  font-size: 14px;
 }
 
 .container {
   text-align: center;
+  width: min(96vw, 900px);
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.sidebar {
+  text-align: left;
+}
+
+.content {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.controls input[type="number"] {
+  width: 64px;
+  padding: 4px 6px;
+  font-size: 0.9rem;
+}
+
+.controls button {
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .scoreboard {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.status {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  margin-bottom: 20px;
+  gap: 4px;
+  margin: 0 auto 12px auto;
+  width: min(94vw, 440px);
+  aspect-ratio: 1 / 1;
 }
 
 .cell {
@@ -38,22 +84,60 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: clamp(1rem, 7.5vw, 1.8rem);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
+  user-select: none;
 }
 
 .cell:hover {
   background-color: #e0e0e0;
 }
 
-.reset {
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
+.history {
+  margin-top: 0;
+  text-align: left;
+  font-size: 0.9rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 10px;
 }
 
-.history {
-  margin-top: 20px;
-  text-align: left;
+.history h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+
+.history ul {
+  list-style: disc;
+  padding-left: 18px;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .board {
+    width: min(96vw, 520px);
+  }
+}
+
+@media (max-width: 480px) {
+  .scoreboard {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .controls button,
+  .controls input[type="number"] {
+    font-size: 0.85rem;
+  }
+  .cell {
+    font-size: clamp(0.9rem, 9vw, 1.6rem);
+  }
 }
